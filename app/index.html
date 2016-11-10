@@ -1,0 +1,32 @@
+<!DOCTYPE html5>
+
+<html ng-app="camera">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Camera</title>
+	</head>
+	<body>
+		<!-- <div id="startCamera">
+			<button onclick="activateCamera()">Start Camera</button>
+		</div> -->
+		<div ng-controller="cameraPicker">
+			<div ng-if="html5Camera">html5
+				<div ng-controller="cameraController">
+					<webcam channel="channel" on-streaming="onSuccess()" on-error="onError(err)" on-stream="onStream(stream)"></webcam>
+				</div>
+			</div>
+			<div ng-if="flashCamera">flash
+			</div>
+			<div ng-if="mobileCamera">mobile
+				<input type="file" accept="image/*">
+				</input>
+			</div>
+		</div>
+	</body>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/webcam/app/scripts/webcam.js"></script>	
+	<script src="app.js"></script>
+	<script src="components/version/version.js"></script>
+	<script src="components/version/version-directive.js"></script>
+	<script src="components/version/interpolate-filter.js"></script>
+</html>
